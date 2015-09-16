@@ -17,8 +17,6 @@ lb:
   links:
     - app1
     - app2
-  ports:
-    - "8080:80"
 
 test:
   build:

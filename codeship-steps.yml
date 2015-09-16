@@ -1,3 +1,14 @@
-- name: ci
-  service: test
-  command: ab -n 100 -c 15 http://lb/
+- type: parallel
+  steps:
+  - name: ci1
+    service: test
+    command: ab -n 1000 -c 50 http://lb/
+  - name: ci2
+    service: test
+    command: ab -n 1000 -c 50 http://lb/
+  - name: ci3
+    service: test
+    command: ab -n 1000 -c 50 http://lb/
+  - name: ci4
+    service: test
+    command: ab -n 1000 -c 50 http://lb/
